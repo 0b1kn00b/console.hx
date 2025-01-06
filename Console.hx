@@ -587,9 +587,11 @@ class Console {
 			#end // neko
 
 		// detect specific TERM environments
-		var termEnv = Sys.environment().get('TERM');
+		final termEnv : String = Sys.environment().get('TERM') ?? "NONE";
+		final reg : EReg = ~/cygwin|xterm|vt100/; 
+		final matches = @:nullSafety(Off) reg.match(termEnv);
 
-		if (termEnv != null && ~/cygwin|xterm|vt100/.match(termEnv)) {
+		if (matches) {
 			return AsciiTerminal;
 		}
 		#end // (sys || nodejs)

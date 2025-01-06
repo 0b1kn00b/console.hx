@@ -6,6 +6,9 @@
       ],
       "cppia" : {
         "--cppia" : "build/unit/cppia"
+      },
+      "python" : {
+        "--python" : "build/python/main.py"
       }
     }
   }
