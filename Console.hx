@@ -557,6 +557,7 @@ class Console {
 			#if cpp
 		var winconVTEnabled = false;
 
+		#if !cppia
 		untyped __cpp__('
 			#if defined(HX_WINDOWS) && defined(ENABLE_VIRTUAL_TERMINAL_PROCESSING)
 			// Set output mode to handle virtual terminal sequences
@@ -573,7 +574,7 @@ class Console {
 		if (winconVTEnabled) {
 			return AsciiTerminal;
 		}
-
+		#end
 			#elseif neko
 		if (Sys.systemName() == 'Windows') {
 			// try enabling virtual terminal emulation via wincon.ndll

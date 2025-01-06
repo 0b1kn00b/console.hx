@@ -1,0 +1,12 @@
+{
+  "build" : {
+    "unit" : {
+      "--macro" : [
+        "include('',false)"
+      ],
+      "cppia" : {
+        "--cppia" : "build/unit/cppia"
+      }
+    }
+  }
+}
